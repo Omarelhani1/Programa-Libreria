@@ -10,18 +10,18 @@ with open("books.json") as libros:
 
 @app.route('/')
 def inicio():
-    nombre='Omar Elhani Botkala"
+    nombre='Omar Elhani Botkala'
     return render_template('inicio.html', libros=datos, nombre=nombre)
 
 
 @app.route('/libro/<isbn>')
 def libro(isbn):
     for lib in datos:
-        if "isbn" in lib.keys() and isbn == l["isbn"]:
+        if "isbn" in lib.keys() and isbn == lib["isbn"]:
             return render_template('libros.html', libro=lib)
 
     return abort(404) 
 
 
 port=os.environ["PORT"]
-app.run('0.0.0.0', int(port), debug=False)
+app.run('0.0.0.0', int(port), debug=True)
