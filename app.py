@@ -16,7 +16,7 @@ def inicio():
 
 @app.route('/libro/<isbn>')
 def libro(isbn):
-    for lib in datos:
+    for libro in datos:
         if "isbn" in lib.keys() and isbn == lib["isbn"]:
             return render_template('libros.html', libro=lib)
 
