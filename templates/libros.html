@@ -33,7 +33,14 @@
         <li>{{autores}}</li>
     </ul>
     {% endfor -%}
-
+    {% if libro.categories %}
+        <p><strong>Categorias</strong></p>
+        {% for elem in libro.categories %}
+            <ul>
+                <li><a href="/categoria/{{elem}}">{{elem}}</a></li>
+            </ul>
+        {% endfor %}
+    {% endif %}
     <h2>Volver al inicio</h2>
     <p><a href="/">inicio</a></p>
 
